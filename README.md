@@ -1,6 +1,4 @@
-
-````md
-#  Visualizador de Ações Interativo
+# Visualizador de Ações Interativo
 
 ### Funcionalidades Principais:
 - **Inserção de Tickers**: O usuário pode inserir o código (ticker) de uma ou mais ações da bolsa para visualizar suas informações financeiras.
@@ -45,4 +43,4 @@ npm start
 
 O projeto estará disponível em `http://localhost:3000`.
 
-```
+
