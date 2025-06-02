@@ -1,0 +1,39 @@
+/* src/components/SavedQueriesList.css */
+
+div {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 6px;
+    display: flex;
+    gap: 8px;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #19b2e6;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #128bb7;
+  }
+  

@@ -1,0 +1,116 @@
+/* src/App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.app-header {
+  background-color: #FFF;
+  color: #333;
+  text-align: center;
+  border-bottom: 1px solid #E5E8EB;
+}
+
+.app-header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.app-content {
+  flex: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.controls-section {
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.selected-tickers {
+  margin: 10px 0;
+}
+
+
+.ticker-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ticker-tag {
+  display: inline-flex;
+  align-items: center;
+  --tw-bg-opacity: 1;
+    background-color: rgb(241 242 244 / var(--tw-bg-opacity, 1));
+    --tw-text-opacity: 1;
+    color: rgb(18 20 22 / var(--tw-text-opacity, 1));
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+.remove-ticker {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  --tw-text-opacity: 1;
+  color: rgb(18 20 22 / var(--tw-text-opacity, 1));
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 16px;
+  padding: 3px 0 0 5px;
+}
+
+.remove-ticker:hover {
+  color: #f44336;
+}
+
+.visualization-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 10px;
+  }
+  
+  .controls-section, .visualization-section {
+    padding: 15px;
+  }
+}
+
+.favorite-toggle {
+  margin-left: 6px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: gold;
+  user-select: none;
+}

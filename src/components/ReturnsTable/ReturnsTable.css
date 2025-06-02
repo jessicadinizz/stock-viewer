@@ -1,0 +1,41 @@
+/* src/components/ReturnsTable/ReturnsTable.css */
+.returns-table-container {
+  margin-top: 20px;
+}
+
+.table-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.returns-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.returns-table th, .returns-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.returns-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.returns-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.positive {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.negative {
+  color: #F44336;
+  font-weight: bold;
+}

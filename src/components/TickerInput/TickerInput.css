@@ -1,0 +1,90 @@
+.ticker-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 1010px;
+  margin-bottom: 20px;
+}
+
+.ticker-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.input-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f0f2f5;
+  border-radius: 0.5rem; /* rounded-lg */
+  height: 40px;
+  width: 100%;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 12px;
+  color: #60758a;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  user-select: none;
+}
+
+.ticker-input {
+  flex: 1;
+  background-color: #f0f2f5;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 1rem;
+  color: #111418;
+  padding-left: 8px;
+  padding-right: 16px;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  font-family: Inter, "Noto Sans", sans-serif;
+}
+
+.ticker-input::placeholder {
+  color: #60758a;
+  font-weight: 400;
+}
+
+.ticker-suggestions {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #dbe0e6;
+  border-radius: 0.5rem;
+  z-index: 20;
+}
+
+.ticker-suggestion-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-family: Inter, "Noto Sans", sans-serif;
+  color: #111418;
+  font-size: 0.875rem;
+}
+
+.ticker-suggestion-item:hover {
+  background-color: #f0f2f5;
+}
+
+.error-message {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: #d32f2f;
+  font-weight: 500;
+}

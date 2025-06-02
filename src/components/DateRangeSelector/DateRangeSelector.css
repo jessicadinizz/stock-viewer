@@ -1,0 +1,41 @@
+.date-range-selector {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.date-range-options {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.range-button {
+  flex: 1;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #60758a;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.range-button:hover {
+  background-color: #e6e9ee;
+}
+
+.range-button.active {
+  background-color: white;
+  color: #111418;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
