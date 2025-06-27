@@ -32,10 +32,8 @@ const App: React.FC = () => {
   //   return saved ? JSON.parse(saved) : [];
   // });
 
-  const memoizedCachedDataMap = useMemo(
-    () => cachedDataMap,
-    [JSON.stringify(cachedDataMap)]
-  );
+  const memoizedCachedDataMap = cachedDataMap;
+
 
   const { data, loading, error } = useStockData(
     tickers,
@@ -135,7 +133,7 @@ const App: React.FC = () => {
       <header className="app-header">
         <div className="app-header-wrapper">
 
-          <button
+          {/* <button
             onClick={toggleTheme}
             style={{
               marginLeft: "auto",
@@ -145,7 +143,7 @@ const App: React.FC = () => {
             title="Alternar modo claro/escuro"
           >
             {theme === "light" ? "Modo Escuro" : "Modo Claro"}
-          </button>
+          </button> */}
         </div>
       </header>
 

@@ -40,7 +40,7 @@ export const useStockData = (
     const now = Date.now();
 
     const tickersToFetch = tickers.filter((ticker) => {
-      const cached = cache[ticker];
+      const cached = cache[`${ticker}_${dateRange}`];
       return !cached || now - cached.timestamp > CACHE_EXPIRATION_MS;
     });
 
@@ -62,7 +62,7 @@ export const useStockData = (
 
         const validCachedData = tickers
           .filter((t) => !tickersToFetch.includes(t))
-          .map((t) => cache[t].data);
+          .map((t) => cache[`${t}_${dateRange}`].data);
 
         const fetchedData =
           tickersToFetch.length > 0
@@ -74,7 +74,7 @@ export const useStockData = (
         );
 
         processedFetched.forEach((stock) => {
-          cache[stock.ticker] = { data: stock, timestamp: now };
+          cache[`${stock.ticker}_${dateRange}`] = { data: stock, timestamp: now };
         });
         localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
 
