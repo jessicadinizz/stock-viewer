@@ -7,6 +7,19 @@ interface ChartProps {
   stockData: StockData[];
 }
 
+const COLORS = [
+  "#60758a",
+  "#82ca9d",
+  "#8884d8",
+  "#ff7300",
+  "#00c49f",
+  "#0088fe",
+  "#a83279",
+  "#ffd700",
+  "#00bfff",
+  "#ff69b4",
+];
+
 const Chart: React.FC<ChartProps> = ({ stockData }) => {
   if (stockData.length === 0) {
     return (
@@ -16,22 +29,25 @@ const Chart: React.FC<ChartProps> = ({ stockData }) => {
     );
   }
 
-  const series = stockData.map((stock) => ({
-    name: stock.ticker,
-    data: stock.prices.map((point) => [point.date.getTime(), point.close]),
-    type: "area",
-    fillColor: {
-      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-      stops: [
-        [0, "rgba(96, 117, 138, 0.2)"],
-        [1, "rgba(240, 242, 245, 0)"],
-      ],
-    },
-    lineWidth: 3,
-    color: "#60758a",
-    marker: { enabled: false },
-    threshold: null,
-  }));
+  const series = stockData.map((stock, index) => {
+    const baseColor = COLORS[index % COLORS.length];
+    return {
+      name: stock.ticker,
+      data: stock.prices.map((point) => [point.date.getTime(), point.close]),
+      type: "area",
+      fillColor: {
+        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+        stops: [
+          [0, Highcharts.color(baseColor).setOpacity(0.2).get("rgba")],
+          [1, Highcharts.color(baseColor).setOpacity(0).get("rgba")],
+        ],
+      },
+      lineWidth: 3,
+      color: baseColor,
+      marker: { enabled: false },
+      threshold: null,
+    };
+  });
 
   const options: Highcharts.Options = {
     chart: {
@@ -58,7 +74,7 @@ const Chart: React.FC<ChartProps> = ({ stockData }) => {
       tickLength: 0,
       lineColor: "transparent",
       gridLineWidth: 0,
-      crosshair: true, // crosshair é propriedade do xAxis
+      crosshair: true,
     },
     yAxis: {
       visible: false,
@@ -86,15 +102,17 @@ const Chart: React.FC<ChartProps> = ({ stockData }) => {
       area: {
         marker: { enabled: false },
         fillOpacity: 0.2,
-        linecap: "round", // corrigido: está diretamente em plotOptions.area, não dentro de line
+        linecap: "round",
       },
     },
     series: series as Highcharts.SeriesOptionsType[],
   };
 
   return (
-    <div className="w-full max-w-full px-4 py-4">
-      <HighchartsReact highcharts={Highcharts} options={options} />
+    <div className="chart-container">
+      <div className="chart-wrapper">
+        <HighchartsReact highcharts={Highcharts} options={options} />
+      </div>
     </div>
   );
 };

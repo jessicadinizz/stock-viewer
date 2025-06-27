@@ -98,12 +98,40 @@
 @media (max-width: 768px) {
   .app-content {
     padding: 10px;
+    margin-top: 1rem;
   }
-  
-  .controls-section, .visualization-section {
-    padding: 15px;
+
+  .app-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .controls-section,
+  .visualization-section {
+    padding: 1rem;
+  }
+
+  .ticker-tags {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ticker-tag {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .visualization-section {
+    overflow-x: auto;
+  }
+
+  .remove-ticker {
+    font-size: 1.2rem;
   }
 }
+
 
 .favorite-toggle {
   margin-left: 6px;
