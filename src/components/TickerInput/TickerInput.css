@@ -88,3 +88,31 @@
   color: #d32f2f;
   font-weight: 500;
 }
+@media (max-width: 768px) {
+  .ticker-input-container {
+    padding: 0 10px;
+  }
+
+  .ticker-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .input-wrapper {
+    height: 44px;
+  }
+
+  .ticker-input {
+    font-size: 0.95rem;
+  }
+
+  .ticker-suggestions {
+    top: 48px;
+    font-size: 0.85rem;
+  }
+
+  .ticker-suggestion-item {
+    padding: 8px 12px;
+  }
+}

@@ -39,3 +39,23 @@
   color: #F44336;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .returns-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .returns-table {
+    min-width: 600px;
+  }
+
+  .table-title {
+    font-size: 16px;
+  }
+
+  .returns-table th,
+  .returns-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
